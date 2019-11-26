@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../js/lay-module/step-lay/step.css" media="all">
+<link rel="stylesheet" href="../lib/lay-module/step-lay/step.css" media="all">
 <div class="layuimini-container">
     <div class="layuimini-main">
 
@@ -165,18 +165,12 @@
 
 
         form.on('submit(formStep)', function (data) {
-
-            layer.msg(data.field);
             step.next('#stepForm');
-
             return false;
         });
 
         form.on('submit(formStep2)', function (data) {
-            layer.msg(data.field);
-            console.log(data.field);
             step.next('#stepForm');
-
             return false;
         });
 
