@@ -31,7 +31,7 @@
             },
             {
               "title": "主页二",
-              "href": "page/welcome-2.html",
+              "href": "page/article-list.html",
               "icon": "fa fa-tachometer",
               "target": "_self"
             }
