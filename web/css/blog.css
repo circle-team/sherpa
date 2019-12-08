@@ -117,6 +117,18 @@
 .blog-mask{position:fixed;left:0;right:0;top:60px;bottom:0;background:rgba(0,0,0,.7);z-index:8}
 .maskIn{-moz-animation:maskFadeIn .5s;-o-animation:maskFadeIn .5s;-webkit-animation:maskFadeIn .5s;animation:maskFadeIn .5s}
 .maskOut{-moz-animation:maskFadeOut .5s;-o-animation:maskFadeOut .5s;-webkit-animation:maskFadeOut .5s;animation:maskFadeOut .5s}
+
+.detail-about{position: relative; line-height: 20px; padding: 15px 15px 15px 75px; font-size: 13px; background-color: #f8f8f8; color: #999;}
+.detail-about .jie-status, .detail-about .jie-status-ok{color:#fff;}
+.detail-about .fly-jing{padding:0 6px; background-color:#c00; color:#fff;}
+.detail-about .detail-hits{position: relative; top: 5px; line-height: 20px;}
+.fly-detail-user{white-space: nowrap; overflow: hidden;}
+.fly-detail-user a{padding-right: 10px; font-size: 14px;}
+
+.fly-avatar{position: absolute; left: 15px; top: 15px;}
+.fly-avatar img{display: block; width: 45px; height: 45px; margin: 0; border-radius: 2px;}
+
+
 @-webkit-keyframes bounceInDown{0%,60%,75%,90%,to{transition-timing-function:cubic-bezier(.215,.61,.355,1)}
 0%{opacity:0;-webkit-transform:translate3d(0,-3000px,0);transform:translate3d(0,-3000px,0)}
 60%{opacity:1;-webkit-transform:translate3d(0,25px,0);transform:translate3d(0,25px,0)}
