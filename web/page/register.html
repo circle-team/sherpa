@@ -15,22 +15,111 @@
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        html, body {width: 100%;height: 100%;overflow: hidden;}
-        body {background: #009688;}
-        body:after {content:'';background-repeat:no-repeat;background-size:cover;-webkit-filter:blur(3px);-moz-filter:blur(3px);-o-filter:blur(3px);-ms-filter:blur(3px);filter:blur(3px);position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
-        .layui-container {width: 100%;height: 100%;}
-        .admin-login-background {width:400px;height:auto;position:absolute;left:49%;top:4%;margin-left:-180px;margin-top:0px;}
-        .logo-title {text-align:center;letter-spacing:2px;padding:8px 0;}
-        .logo-title h1 {color:#009688;font-size:25px;font-weight:bold;}
-        .login-form {background-color:#fff;border:1px solid #fff;border-radius:3px;padding:0px 20px;box-shadow:0 0 8px #eeeeee;}
-        .login-form .layui-form-item {position:relative;}
-        .login-form .layui-form-item label {position:absolute;left:1px;top:1px;width:38px;line-height:36px;text-align:center;color:#d2d2d2;}
-        .login-form .layui-form-item input {padding-left:36px;}
-        .captcha {width:60%;display:inline-block;}
-        .captcha-img {display:inline-block;width:34%;float:right;}
-        .captcha-img img {height:34px;border:1px solid #e6e6e6;height:36px;width:100%;}
-        #area-picker input{padding-left: 12px;}
-        .overflow {overflow-y: auto}
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            background: #009688;
+        }
+
+        body:after {
+            content: '';
+            background-repeat: no-repeat;
+            background-size: cover;
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            -o-filter: blur(3px);
+            -ms-filter: blur(3px);
+            filter: blur(3px);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .layui-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .admin-login-background {
+            width: 400px;
+            height: auto;
+            position: absolute;
+            left: 49%;
+            top: 4%;
+            margin-left: -180px;
+            margin-top: 0px;
+        }
+
+        .logo-title {
+            text-align: center;
+            letter-spacing: 2px;
+            padding: 8px 0;
+        }
+
+        .logo-title h1 {
+            color: #009688;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .login-form {
+            background-color: #fff;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            padding: 0px 20px;
+            box-shadow: 0 0 8px #eeeeee;
+        }
+
+        .login-form .layui-form-item {
+            position: relative;
+        }
+
+        .login-form .layui-form-item label {
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            width: 38px;
+            line-height: 36px;
+            text-align: center;
+            color: #d2d2d2;
+        }
+
+        .login-form .layui-form-item input {
+            padding-left: 36px;
+        }
+
+        .captcha {
+            width: 60%;
+            display: inline-block;
+        }
+
+        .captcha-img {
+            display: inline-block;
+            width: 34%;
+            float: right;
+        }
+
+        .captcha-img img {
+            height: 34px;
+            border: 1px solid #e6e6e6;
+            height: 36px;
+            width: 100%;
+        }
+
+        #area-picker input {
+            padding-left: 12px;
+        }
+
+        .overflow {
+            overflow-y: auto
+        }
     </style>
 </head>
 <body>
@@ -43,46 +132,48 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="username" placeholder="用户名" autocomplete="off" class="layui-input" >
+                    <input type="text" name="username" placeholder="用户名" lay-verify="required|name" autocomplete="off"
+                           class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-user" for="nickname"></label>
-                    <input type="text" name="nickname" placeholder="昵称" autocomplete="off" class="layui-input" >
+                    <input type="text" name="nickname" placeholder="昵称" lay-verify="required|name" autocomplete="off"
+                           class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-password" for="password"></label>
-                    <input type="password" name="password" placeholder="密码" autocomplete="off" class="layui-input">
+                    <input type="password" name="password" placeholder="密码" lay-verify="required|pass"
+                           autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon layui-icon-ok-circle" for=" replypassword"></label>
-                    <input type="password" name="password" placeholder="请重复密码" autocomplete="off" class="layui-input">
+                    <label class="layui-icon layui-icon-ok-circle" for="replypassword"></label>
+                    <input type="password" name="replypassword" placeholder="请重复密码" lay-verify="required"
+                           autocomplete="off" class="layui-input">
                 </div>
                 <div class="layui-form-item ">
-                    <label class="layui-icon layui-icon-release"></label>
-                    <input type="email" name="email" lay-verify="required|password" placeholder="邮箱" autocomplete="off" class="layui-input">
+                    <label class="layui-icon layui-icon-release" for="email"></label>
+                    <input type="email" name="email" placeholder="邮箱" lay-verify="required|email" autocomplete="off"
+                           class="layui-input">
                 </div>
                 <div class="layui-form-item ">
                     <label class="layui-icon layui-icon-cellphone-fine"></label>
-                    <input type="text" name="phone" placeholder="手机号" autocomplete="off" class="layui-input">
+                    <input type="text" name="phone" placeholder="手机号" lay-verify="required|phone" autocomplete="off"
+                           class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-help" for="question"></label>
-                    <input type="text" name="question" placeholder="密保问题" autocomplete="off" class="layui-input" >
+                    <input type="text" name="question" placeholder="密保问题" lay-verify="required|phone" autocomplete="off"
+                           class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-reply-fill" for="answer"></label>
-                    <input type="text" name="answer" placeholder="密保答案" autocomplete="off" class="layui-input" >
-                </div>
-                <div class="layui-form-item ">
-                    <label class="layui-icon layui-icon-date"></label>
-                    <input type="text" name="birthday" class="layui-input" id="date1" placeholder="生日">
+                    <input type="text" name="answer" placeholder="密保答案" lay-verify="required" autocomplete="off"
+                           class="layui-input">
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-icon">性别</label>
-                    <div class="layui-input-block">
-                        <input type="radio" name="sex" value="男" title="男"checked>
-                        <input type="radio" name="sex" value="女" title="女">
-                    </div>
+                    <label class="layui-icon layui-icon-date" for="birthday"></label>
+                    <input type="text" name="birthday" class="layui-input" lay-verify="required" id="birth"
+                           placeholder="生日">
                 </div>
                 <div class="layui-form-item" id="area-picker">
                     <div class="layui-input-inline" style="width: 100px;padding-left: 0px;">
@@ -92,7 +183,7 @@
                     </div>
                     <div class="layui-input-inline" style="width: 100px;">
                         <select name="city" class="city-selector" data-value="深圳市" lay-filter="city-1">
-                            <option  value="">请选择市</option>
+                            <option value="">请选择市</option>
                         </select>
                     </div>
                     <div class="layui-input-inline" style="width: 100px;">
@@ -102,7 +193,14 @@
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="login">注  册</button>
+                    <label class="layui-icon">性别</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="sex" value="男" title="男" checked>
+                        <input type="radio" name="sex" value="女" title="女">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="login">注 册</button>
                 </div>
             </form>
         </div>
@@ -111,48 +209,42 @@
 <script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
 <script src="../lib/layui-v2.5.4/layui.js" charset="utf-8"></script>
 <script src="../lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
+<script src="../js/lay-config.js" charset="utf-8"></script>
 <script>
-    layui.use(['form'], function () {
+    // layui.config({
+    //     base: '../js/lay-module/layarea/'
+    //     , version: '1.0'
+    // });
+    layui.use(['form', 'layarea', 'layer', 'laydate'], function () {
         var form = layui.form,
-            layer = layui.layer;
+            layer = layui.layer,
+            layarea = layui.layarea,
+            $ = layui.jquery,
+            laydate = layui.laydate;
+
 
         // 登录过期的时候，跳出ifram框架
         if (top.location != self.location) top.location = self.location;
 
         // 粒子线条背景
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('.layui-container').particleground({
-                dotColor:'#5cbdaa',
-                lineColor:'#5cbdaa'
+                dotColor: '#5cbdaa',
+                lineColor: '#5cbdaa'
             });
         });
 
-        // 进行登录操作
-        form.on('submit(login)', function (data) {
-            data = data.field;
-            if (data.username == '') {
-                layer.msg('用户名不能为空');
-                return false;
+        form.verify({
+            name: function (value) {
+                var reg = /^[a-zA-Z][a-zA-Z0-9]{2,20}$/;
+                if (reg.test(value) == false) {
+                    return '用户名或昵称不能含有特殊字符';
+                }
+                if (value.length < 4 && value.length > 12) {
+                    return '用户名或昵称应该在4个字符和12个字符之间';
+                }
             }
-            if (data.password == '') {
-                layer.msg('密码不能为空');
-                return false;
-            }
-            layer.msg('登录成功', function () {
-                window.location = '/index.html';
-            });
-            return false;
         });
-    });
-    //地址函数调用
-    layui.config({
-        base: '../js/lay-module/layarea/'
-        , version: '1.0'
-    });
-    layui.use(['layer', 'form', 'layarea'], function () {
-        var layer = layui.layer
-            , form = layui.form
-            , layarea = layui.layarea;
 
         layarea.render({
             elem: '#area-picker',
@@ -161,23 +253,47 @@
                 console.log(res);
             }
         });
-    });
-    //滚动条
-    function overflow(){
-        if ($(window).height != $(document).height){
-            $(".layui-container").addClass("overflow");
-        }
-    }
-    layui.use('laydate', function(){
-        var laydate = layui.laydate;
-
-        //执行一个laydate实例
         laydate.render({
-            elem: '#date1' ,//指定元素
-            theme:'grid',
+            elem: '#birth',//指定元素
+            theme: 'grid',
             showBottom: false
         });
+
+        // 进行登录操作
+        form.on('submit(login)', function (data) {
+            data = data.field;
+            if (data.password != data.replypassword) {
+                layer.msg('密码不能为空');
+                return false;
+            }
+            $.ajax({
+                url: './add',
+                method: 'post',
+                data: data.field,
+                dataType: 'JSON',
+                success: function (res) {
+                    if (res.code = '0') {
+                        layer.msg('登录成功', function () {
+                            window.location = '/index.html';
+                        });
+                    } else
+                        alert(res.msg);
+                },
+                error: function (data) {
+                }
+            });
+            return false;
+        });
+
     });
+
+
+    //滚动条
+    // function overflow(){
+    //     if ($(window).height != $(document).height){
+    //         $(".layui-container").addClass("overflow");
+    //     }
+    // }
 </script>
 </body>
 </html>
