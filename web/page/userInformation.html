@@ -1,72 +1,267 @@
-<div class="layui-container">
-    <div class="layui-form">
+<style>
+    .layui-container {
+        width: 100%;
+        height: 100%;
+    }
 
+    .logo-title {
+        letter-spacing: 2px;
+        padding: 8px 0;
+        position: relative;
+        margin: 20px 20%;
+    }
+
+    .logo-title h1 {
+        color: #009688;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .login-form {
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        padding: 0px 20px;
+        box-shadow: 0 0 8px #eeeeee;
+    }
+
+    .login-form .layui-form-item {
+        position: relative;
+        width: 80%;
+        margin: 20px 20%;
+    }
+
+    .login-form .layui-form-item label {
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        width: 38px;
+        line-height: 36px;
+        text-align: center;
+        color: #d2d2d2;
+    }
+
+    .login-form .layui-form-item input {
+        padding-left: 36px;
+        width: 80%;
+    }
+
+    .login-form .layui-form-item img {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        display: block;
+        margin: 0px 30%;
+    }
+
+    .captcha {
+        width: 60%;
+        display: inline-block;
+    }
+
+    .captcha-img {
+        display: inline-block;
+        width: 34%;
+        float: right;
+    }
+
+    .captcha-img img {
+        border: 1px solid #e6e6e6;
+        height: 36px;
+        width: 100%;
+    }
+
+    #area-picker input {
+        padding-left: 12px;
+    }
+</style>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <div class="login-form">
+            <form class="layui-form" lay-filter="ex">
+                <div class="layui-form-item">
+                    <img src="images/LogImg/img_50.jpg">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-username" for="username"></label>
+                    <input type="text" name="username" id="username" placeholder="用户名" lay-verify="required|name"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-user" for="nickname"></label>
+                    <input type="text" name="nickname" id="nickname" placeholder="昵称" lay-verify="required|name"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item ">
+                    <label class="layui-icon layui-icon-release" for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="邮箱" lay-verify="required|email"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item ">
+                    <label class="layui-icon layui-icon-vercode" for="idcard"></label>
+                    <input type="text" name="idcard" id="idcard" placeholder="身份证号"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item ">
+                    <label class="layui-icon layui-icon-cellphone-fine"></label>
+                    <input type="text" name="phone" id="phone" placeholder="手机号" lay-verify="required|phone"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item ">
+                    <label class="layui-icon layui-icon-group" for="job"></label>
+                    <input type="text" name="job" id="job" placeholder="职业"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-help" for="question"></label>
+                    <input type="text" name="question" id="question" placeholder="密保问题" lay-verify="required|phone"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-reply-fill" for="answer"></label>
+                    <input type="text" name="answer" id="answer" placeholder="密保答案" lay-verify="required"
+                           autocomplete="off"
+                           class="layui-input">
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-icon layui-icon-date" for="birthday"></label>
+                    <input type="text" name="birthday" id="birthday" class="layui-input" lay-verify="required"
+                           id="birth"
+                           placeholder="生日">
+                </div>
+                <div class="layui-form-item" id="area-picker">
+                    <div class="layui-input-inline" style="width: 150px;padding-left: 0px;">
+                        <select name="province" class="province-selector" data-value="广东省" lay-filter="province-1">
+                            <option value="">请选择省</option>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline" style="width: 150px;">
+                        <select name="city" class="city-selector" data-value="深圳市" lay-filter="city-1">
+                            <option value="">请选择市</option>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline" style="width: 150px;">
+                        <select name="county" class="county-selector" data-value="龙岗区" lay-filter="county-1">
+                            <option value="">请选择区</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-icon">性别</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="sex" value="男" title="男" checked>
+                        <input type="radio" name="sex" value="女" title="女">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-col-md3 ">
+                        <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="login">确 定</button>
+                    </div>
+                    <div class="layui-col-md3 layui-col-lg-offset1">
+                        <button class="layui-btn layui-btn-fluid" lay-submit="" lay-filter="login">重 构</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
     </div>
 </div>
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function () {
-        var form = layui.form
-            , layer = layui.layer
-            , layedit = layui.layedit
-            , laydate = layui.laydate;
+    layui.use(['form', 'layarea', 'layer', 'laydate'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            layarea = layui.layarea,
+            laydate = layui.laydate,
+            $ = layui.jquery;
 
-        /**
-         * 初始化表单，要加上，不然刷新部分组件可能会不加载
-         */
-        form.render();
 
-        //日期
-        laydate.render({
-            elem: '#date'
-        });
-        laydate.render({
-            elem: '#date1'
-        });
-
-        //创建一个编辑器
-        var editIndex = layedit.build('LAY_demo_editor');
-
+        // 登录过期的时候，跳出ifram框架
+        if (top.location != self.location) top.location = self.location;
         //自定义验证规则
+
         form.verify({
-            title: function (value) {
-                if (value.length < 5) {
-                    return '标题至少得5个字符啊';
+            name: function (value) {
+                var reg = /^[a-zA-Z][a-zA-Z0-9]{2,20}$/;
+                if (reg.test(value) == false) {
+                    return '用户名或昵称不能含有特殊字符';
+                }
+                if (value.length < 4 && value.length > 12) {
+                    return '用户名或昵称应该在4个字符和12个字符之间';
                 }
             }
             , pass: [
                 /^[\S]{6,12}$/
                 , '密码必须6到12位，且不能出现空格'
             ]
-            , content: function (value) {
-                layedit.sync(editIndex);
+        });
+
+        layarea.render({
+            elem: '#area-picker',
+            change: function (res) {
+                //选择结果
+                console.log(res);
+            }
+        });
+        laydate.render({
+            elem: '#birthday',//指定元素
+            theme: 'grid',
+            showBottom: false
+        });
+
+        var exam;
+        $.ajax({
+            url: './add',
+            method: 'post',
+            data: data.field,
+            dataType: 'JSON',
+            success: function (res) {
+               exam= res.data;
+                },
+            error: function (data) {
             }
         });
 
-        //监听指定开关
-        form.on('switch(switchTest)', function (data) {
-            layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
-                offset: '6px'
-            });
-            layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
-        });
 
         //监听提交
-        form.on('submit(demo1)', function (data) {
-            layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            })
+        form.on('submit(login)', function (data) {
+            data = data.field;
+            if (data.password != data.replypassword) {
+                layer.msg('密码不能为空');
+                return false;
+            }
+
+            $.ajax({
+                url: './add',
+                method: 'post',
+                data: data.field,
+                dataType: 'JSON',
+                success: function (res) {
+                    if (res.code = '0') {
+                        layer.msg('登录成功', function () {
+                            window.location = '/index.html';
+                        });
+                    } else
+                        alert(res.msg);
+                },
+                error: function (data) {
+                }
+            });
             return false;
         });
 
-        //表单初始赋值
-        form.val('example', {
-            "username": "贤心" // "name": "value"
-            , "password": "123456"
-            , "interest": 1
-            , "like[write]": true //复选框选中状态
-            , "close": true //开关状态
-            , "sex": "女"
-            , "desc": "我爱 layui"
+        alert(exam);
+        form.val('ex', {
+            "username": "欧里给",
+            "password": "123456"
         })
     });
 </script>

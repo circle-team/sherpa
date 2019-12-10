@@ -30,8 +30,8 @@
               "target": "_self"
             },
             {
-              "title": "主页二",
-              "href": "page/article-list.html",
+              "title": "个人资料",
+              "href": "page/userInformation.html",
               "icon": "fa fa-tachometer",
               "target": "_self"
             }
@@ -69,7 +69,7 @@
             },
             {
               "title": "分步表单",
-              "href": "page/read.html",
+              "href": "page/form-step.html",
               "icon": "fa fa-navicon",
               "target": "_self"
             }
