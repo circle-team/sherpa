@@ -88,10 +88,10 @@
               "target": "_blank"
             },
             {
-              "title": "登录-2",
-              "href": "page/login-2.html",
+              "title": "找回密码",
+              "href": "page/findPw.html",
               "icon": "fa fa-viacoin",
-              "target": "_blank"
+              "target": "_self"
             }
           ]
         },

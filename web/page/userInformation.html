@@ -82,17 +82,17 @@
         <div class="login-form">
             <form class="layui-form" lay-filter="ex">
                 <div class="layui-form-item">
-                    <img src="images/LogImg/img_50.jpg">
+                    <a href="#"><img src="images/LogImg/img_50.jpg"></a>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="username" id="username" placeholder="用户名" lay-verify="required|name"
+                    <input type="text" name="username" id="username" placeholder="用户名" lay-verify="required"
                            autocomplete="off"
                            class="layui-input">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-user" for="nickname"></label>
-                    <input type="text" name="nickname" id="nickname" placeholder="昵称" lay-verify="required|name"
+                    <input type="text" name="nickname" id="nickname" placeholder="昵称" lay-verify="required"
                            autocomplete="off"
                            class="layui-input">
                 </div>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="layui-form-item ">
                     <label class="layui-icon layui-icon-vercode" for="idcard"></label>
-                    <input type="text" name="idcard" id="idcard" placeholder="身份证号"
+                    <input type="text" name="idcard" id="idcard" placeholder="身份证号" lay-verify="required|identity"
                            autocomplete="off"
                            class="layui-input">
                 </div>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-help" for="question"></label>
-                    <input type="text" name="question" id="question" placeholder="密保问题" lay-verify="required|phone"
+                    <input type="text" name="question" id="question" placeholder="密保问题" lay-verify="required"
                            autocomplete="off"
                            class="layui-input">
                 </div>
@@ -198,10 +198,6 @@
                     return '用户名或昵称应该在4个字符和12个字符之间';
                 }
             }
-            , pass: [
-                /^[\S]{6,12}$/
-                , '密码必须6到12位，且不能出现空格'
-            ]
         });
 
         layarea.render({
