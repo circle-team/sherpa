@@ -259,7 +259,7 @@
             form.on('submit(login)', function (data) {
                 data = data.field;
                 if (data.password != data.replypassword) {
-                    layer.msg('密码不能为空');
+                    layer.msg('密码前后不一致');
                     return false;
                 }
                 $.ajax({
