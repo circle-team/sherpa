@@ -138,6 +138,12 @@
 .home-jieda li p{color:#999;}
 .home-jieda li p span{padding-right:5px;}
 
+/* 面板 */
+.fly-panel{margin-bottom: 15px; border-radius: 2px; background-color: #fff; box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);}
+.fly-panel[pad20]{padding: 20px;}
+.fly-panel-title{position: relative; height: 50px; line-height: 50px; padding: 0 15px; border-bottom: 1px dotted #E9E9E9; color: #333; border-radius: 2px 2px 0 0; font-size: 14px;}
+.fly-panel-main{padding: 10px 15px;}
+
 /* 单行列表 */
 .jie-row li{position: relative; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dotted #E9E9E9; font-size: 0;}
 .jie-row li *{position: relative; display:inline-block; *display:inline; *zoom:1; vertical-align: top; line-height: 20px; font-size:12px;}
